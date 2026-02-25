@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>HawkCloud – Lançamento</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap');
+  :root {
+    --bg-overlay: rgba(7, 12, 24, 0.75);
+    --accent: #7cf8ff;
+    --accent-2: #7b61ff;
+    --text: #f5f7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: "Manrope", "Segoe UI", system-ui, sans-serif;
+    color: var(--text);
+    text-align: center;
+    background-color: #0b1020;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  .overlay {
+    min-height: 100vh;
+    background: linear-gradient(180deg, rgba(5, 10, 20, 0.12), rgba(5, 10, 20, 0.3)), var(--bg-overlay);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 12px 12px;
+  }
+  .container {
+    width: 100%;
+    max-width: 1120px;
+    padding: clamp(14px, 2.5vw, 24px) clamp(12px, 2vw, 20px);
+    max-height: calc(100vh - 20px);
+    overflow: hidden;
+    border-radius: 28px;
+    background: rgba(14, 20, 40, 0.62);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .spacer { flex: 3; min-height: 90px; }
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 8px;
+  }
+  .logo img { width: min(360px, 70vw); height: auto; object-fit: contain; }
+  h1 { font-size: clamp(1.6rem, 2.4vw, 2.1rem); margin: 18px 0 8px; }
+  p { font-size: clamp(0.9rem, 1vw, 1rem); margin: 0 0 18px; color: rgba(245, 247, 255, 0.86); }
+  .subtitle { font-size: 1rem; margin-bottom: 10px; color: rgba(245, 247, 255, 0.7); }
+  .countdown-wrap { margin: 34px 0 26px; }
+  .countdown-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: rgba(124, 248, 255, 0.7);
+    margin-bottom: 10px;
+  }
+  .countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .time-box {
+    min-width: 190px;
+    padding: 22px 18px 16px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, rgba(17, 24, 41, 0.95), rgba(7, 12, 24, 0.92));
+    border: 1px solid rgba(124, 248, 255, 0.15);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 10px 25px rgba(0, 0, 0, 0.45);
+    position: relative;
+  }
+  .time-box::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 50%;
+    height: 1px;
+    background: rgba(124, 248, 255, 0.25);
+    transform: translateY(-50%);
+  }
+  .time-value {
+    font-size: clamp(2.9rem, 4.2vw, 3.5rem);
+    font-weight: 200;
+    letter-spacing: 0.12em;
+    color: var(--text);
+    text-shadow: 0 0 12px rgba(124, 248, 255, 0.35), 0 0 24px rgba(124, 248, 255, 0.2);
+  }
+  .time-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 6px;
+  }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #09121f;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 999px;
+    box-shadow: 0 14px 30px rgba(123, 97, 255, 0.35);
+  }
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .button.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text);
+    box-shadow: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin: 10px 0 8px;
+  }
+  .feature-card {
+    padding: 8px 8px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: left;
+  }
+  .feature-icon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 4px;
+    color: var(--accent);
+  }
+  .feature-card h3 { margin: 0 0 3px; font-size: 0.82rem; }
+  .feature-card p { margin: 0; font-size: 0.75rem; color: rgba(245, 247, 255, 0.7); }
+  .footer { margin-top: 8px; font-size: 0.72rem; color: rgba(245, 247, 255, 0.5); }
+  @media (max-height: 820px) {
+    .container { padding: 16px 12px; }
+    .logo img { width: min(260px, 70vw); }
+    h1 { font-size: 1.85rem; }
+    .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 720px) {
+    h1 { font-size: 2.1rem; }
+    .features { grid-template-columns: 1fr; }
+    .contact { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <div class="overlay">
+    <main class="container">
+      <div class="logo">
+        <img src="imag/logo-transparent.png" alt="Logo HawkCloud">
+      </div>
+      <h1>Next‑gen hosting infrastructure for the UK</h1>
+      <p>We’re finalising the last details. Our hosting platform is launching soon with performance, security, and scalability at its core.</p>
+
+      <section class="countdown-wrap" aria-live="polite">
+        <div class="countdown-title">Time Remaining</div>
+        <div class="countdown">
+          <div class="time-box">
+            <div class="time-value" id="days">00</div>
+            <div class="time-label">Days</div>
+          </div>
+          <div class="time-box">
+            <div class="time-value" id="hours">00</div>
+            <div class="time-label">Hours</div>
+          </div>
+          <div class="time-box">
+            <div class="time-value" id="minutes">00</div>
+            <div class="time-label">Minutes</div>
+          </div>
+          <div class="time-box">
+            <div class="time-value" id="seconds">00</div>
+            <div class="time-label">Seconds</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="spacer"></div>
+
+      <section class="features">
+        <div class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>Consistent performance</h3>
+          <p>Optimised servers, NVMe SSDs, and smart caching for fast loads.</p>
+        </div>
+        <div class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>Security by design</h3>
+          <p>Automated backups, 24/7 monitoring, and DDoS protection.</p>
+        </div>
+        <div class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 11a4 4 0 018 0v3a3 3 0 01-3 3h-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 14H6a2 2 0 01-2-2v-2a2 2 0 012-2h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 14h2a2 2 0 002-2v-2a2 2 0 00-2-2h-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>Real support</h3>
+          <p>Human, expert support to help your business grow.</p>
+        </div>
+      </section>
+      <div class="footer">© 2026 HawkCloud. All rights reserved.</div>
+    </main>
+  </div>
+
+<script>
+  const backgroundImages = [
+    "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1920&q=80",
+    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=80"
+  ];
+
+  let bgIndex = 0;
+  const applyBackground = () => {
+    document.body.style.backgroundImage = `url('${backgroundImages[bgIndex]}')`;
+    bgIndex = (bgIndex + 1) % backgroundImages.length;
+  };
+
+  applyBackground();
+  setInterval(applyBackground, 8000);
+
+  // Contagem regressiva de 2 meses a partir de hoje
+  const now = new Date();
+  const launchDate = new Date(now.getFullYear(), now.getMonth() + 2, now.getDate(), 9, 0, 0);
+
+  const updateCountdown = () => {
+    const current = new Date().getTime();
+    const distance = launchDate.getTime() - current;
+
+    if (distance <= 0) {
+      document.getElementById("days").textContent = "00";
+      document.getElementById("hours").textContent = "00";
+      document.getElementById("minutes").textContent = "00";
+      document.getElementById("seconds").textContent = "00";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = String(days).padStart(2, "0");
+    document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+    document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+    document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+  };
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
