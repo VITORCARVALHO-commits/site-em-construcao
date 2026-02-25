@@ -29,7 +29,7 @@
     min-height: 100vh;
     background: linear-gradient(180deg, rgba(5, 10, 20, 0.12), rgba(5, 10, 20, 0.3)), var(--bg-overlay);
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     padding: 2px 12px 12px;
   }
@@ -44,7 +44,11 @@
     backdrop-filter: blur(10px);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
     border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
+  .spacer { flex: 3; min-height: 90px; }
   .logo {
     display: flex;
     align-items: center;
@@ -53,10 +57,10 @@
     margin-bottom: 8px;
   }
   .logo img { width: min(360px, 70vw); height: auto; object-fit: contain; }
-  h1 { font-size: clamp(1.6rem, 2.4vw, 2.1rem); margin: 0 0 8px; }
-  p { font-size: clamp(0.9rem, 1vw, 1rem); margin: 0 0 8px; color: rgba(245, 247, 255, 0.86); }
+  h1 { font-size: clamp(1.6rem, 2.4vw, 2.1rem); margin: 18px 0 8px; }
+  p { font-size: clamp(0.9rem, 1vw, 1rem); margin: 0 0 18px; color: rgba(245, 247, 255, 0.86); }
   .subtitle { font-size: 1rem; margin-bottom: 10px; color: rgba(245, 247, 255, 0.7); }
-  .countdown-wrap { margin: 16px 0 14px; }
+  .countdown-wrap { margin: 34px 0 26px; }
   .countdown-title {
     font-size: 0.7rem;
     letter-spacing: 0.5em;
@@ -68,12 +72,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 28px;
     flex-wrap: wrap;
   }
   .time-box {
-    min-width: 130px;
-    padding: 14px 12px 12px;
+    min-width: 190px;
+    padding: 22px 18px 16px;
     border-radius: 22px;
     background: linear-gradient(180deg, rgba(17, 24, 41, 0.95), rgba(7, 12, 24, 0.92));
     border: 1px solid rgba(124, 248, 255, 0.15);
@@ -91,10 +95,11 @@
     transform: translateY(-50%);
   }
   .time-value {
-    font-size: clamp(2.1rem, 3vw, 2.6rem);
-    font-weight: 300;
-    letter-spacing: 0.1em;
+    font-size: clamp(2.9rem, 4.2vw, 3.5rem);
+    font-weight: 200;
+    letter-spacing: 0.12em;
     color: var(--text);
+    text-shadow: 0 0 12px rgba(124, 248, 255, 0.35), 0 0 24px rgba(124, 248, 255, 0.2);
   }
   .time-label {
     font-size: 0.68rem;
@@ -194,6 +199,7 @@
         </div>
       </section>
 
+      <div class="spacer"></div>
 
       <section class="features">
         <div class="feature-card">
@@ -226,7 +232,6 @@
 
 <script>
   const backgroundImages = [
-    "imag/countdown_timer_widget.jpg",
     "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80",
     "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1920&q=80",
     "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=80",
