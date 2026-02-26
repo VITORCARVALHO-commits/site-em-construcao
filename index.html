@@ -9,6 +9,7 @@
     --bg-overlay: rgba(7, 12, 24, 0.75);
     --accent: #7cf8ff;
     --accent-2: #7b61ff;
+    --sky: #8fdcff;
     --text: #f5f7ff;
   }
   * { box-sizing: border-box; }
@@ -20,6 +21,7 @@
     color: var(--text);
     text-align: center;
     background-color: #0b1020;
+    background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -36,7 +38,7 @@
   .container {
     width: 100%;
     max-width: 1120px;
-    padding: clamp(14px, 2.5vw, 24px) clamp(12px, 2vw, 20px);
+    padding: clamp(10px, 2vw, 18px) clamp(10px, 2vw, 16px);
     max-height: calc(100vh - 20px);
     overflow: hidden;
     border-radius: 28px;
@@ -48,19 +50,19 @@
     flex-direction: column;
     justify-content: space-between;
   }
-  .spacer { flex: 3; min-height: 90px; }
+  .spacer { flex: 1; min-height: 12px; }
   .logo {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 14px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
-  .logo img { width: min(360px, 70vw); height: auto; object-fit: contain; filter: grayscale(0.6) saturate(0.3) brightness(0.85) contrast(0.95); }
-  h1 { font-size: clamp(1.6rem, 2.4vw, 2.1rem); margin: 18px 0 8px; }
-  p { font-size: clamp(0.9rem, 1vw, 1rem); margin: 0 0 18px; color: rgba(245, 247, 255, 0.86); }
+  .logo img { width: min(320px, 66vw); height: auto; object-fit: contain; filter: grayscale(0.6) saturate(0.3) brightness(0.85) contrast(0.95); }
+  h1 { font-size: clamp(1.45rem, 2.1vw, 1.9rem); margin: 10px 0 6px; }
+  p { font-size: clamp(0.85rem, 0.95vw, 0.95rem); margin: 0 0 10px; color: rgba(245, 247, 255, 0.86); }
   .subtitle { font-size: 1rem; margin-bottom: 10px; color: rgba(245, 247, 255, 0.7); }
-  .countdown-wrap { margin: 34px 0 26px; }
+  .countdown-wrap { margin: 12px 0 14px; }
   .countdown-title {
     font-size: 0.7rem;
     letter-spacing: 0.5em;
@@ -76,8 +78,8 @@
     flex-wrap: wrap;
   }
   .time-box {
-    min-width: 190px;
-    padding: 22px 18px 16px;
+    min-width: 160px;
+    padding: 16px 14px 12px;
     border-radius: 22px;
     background: linear-gradient(180deg, rgba(17, 24, 41, 0.95), rgba(7, 12, 24, 0.92));
     border: 1px solid rgba(124, 248, 255, 0.15);
@@ -95,17 +97,17 @@
     transform: translateY(-50%);
   }
   .time-value {
-    font-size: clamp(2.9rem, 4.2vw, 3.5rem);
+    font-size: clamp(2.3rem, 3.5vw, 3rem);
     font-weight: 200;
     letter-spacing: 0.12em;
     color: var(--text);
-    text-shadow: 0 0 12px rgba(124, 248, 255, 0.35), 0 0 24px rgba(124, 248, 255, 0.2);
+    text-shadow: 0 0 12px rgba(143, 220, 255, 0.45), 0 0 24px rgba(143, 220, 255, 0.25);
   }
   .time-label {
     font-size: 0.68rem;
     letter-spacing: 0.35em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--sky);
     margin-top: 6px;
   }
   .button {
@@ -136,11 +138,11 @@
   .features {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
-    margin: 10px 0 8px;
+    gap: 8px;
+    margin: 8px 0 6px;
   }
   .reminder {
-    margin: 10px auto 6px;
+    margin: 8px auto 6px;
     padding: 10px 14px;
     border-radius: 16px;
     background: rgba(8, 14, 28, 0.55);
@@ -152,10 +154,15 @@
     color: var(--text);
     font-size: 0.85rem;
     box-shadow: 0 0 18px rgba(124, 248, 255, 0.15);
+    animation: pulseGlow 2.4s ease-in-out infinite;
   }
   .reminder strong { color: var(--accent); }
+  @keyframes pulseGlow {
+    0%, 100% { transform: translateY(0); box-shadow: 0 0 18px rgba(124, 248, 255, 0.15); }
+    50% { transform: translateY(-2px); box-shadow: 0 0 28px rgba(124, 248, 255, 0.35); }
+  }
   .feature-card {
-    padding: 8px 8px;
+    padding: 6px 6px;
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -168,7 +175,7 @@
     color: var(--accent);
   }
   .feature-card h3 { margin: 0 0 3px; font-size: 0.82rem; }
-  .feature-card p { margin: 0 0 6px; font-size: 0.75rem; color: rgba(245, 247, 255, 0.7); }
+  .feature-card p { margin: 0 0 4px; font-size: 0.72rem; color: rgba(245, 247, 255, 0.7); }
   .feature-list {
     margin: 0;
     padding-left: 14px;
@@ -187,6 +194,8 @@
     h1 { font-size: 2.1rem; }
     .features { grid-template-columns: 1fr; }
     .contact { grid-template-columns: 1fr; }
+    .overlay { align-items: flex-start; padding-top: 8px; }
+    .container { margin-top: 0; }
   }
 </style>
 </head>
@@ -196,9 +205,6 @@
       <div class="logo">
         <img src="imag/logo-prevenda-transparent.png" alt="Logo HawkCloud">
       </div>
-      <h1>Next‑gen hosting infrastructure for the UK</h1>
-      <p>We’re finalising the last details. Our hosting platform is launching soon with performance, security, and scalability at its core.</p>
-
       <section class="countdown-wrap" aria-live="polite">
         <div class="countdown-title">Time Remaining</div>
         <div class="countdown">
@@ -272,23 +278,6 @@
   </div>
 
 <script>
-  const backgroundImages = [
-    "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80",
-    "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1920&q=80",
-    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=80",
-    "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1920&q=80",
-    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=80"
-  ];
-
-  let bgIndex = 0;
-  const applyBackground = () => {
-    document.body.style.backgroundImage = `url('${backgroundImages[bgIndex]}')`;
-    bgIndex = (bgIndex + 1) % backgroundImages.length;
-  };
-
-  applyBackground();
-  setInterval(applyBackground, 8000);
-
   // Contagem regressiva de 2 meses a partir de hoje
   const now = new Date();
   const launchDate = new Date(now.getFullYear(), now.getMonth() + 2, now.getDate(), 9, 0, 0);
