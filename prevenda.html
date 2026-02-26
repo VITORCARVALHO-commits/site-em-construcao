@@ -79,11 +79,17 @@
     margin: 10px 0 8px;
   }
   .plan-card {
-    padding: 10px;
-    border-radius: 18px;
+    padding: 6px 8px;
+    border-radius: 26px;
     background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.07);
     text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .plan-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+    border-color: rgba(124, 248, 255, 0.25);
   }
   .plan-icon {
     width: 18px;
@@ -91,20 +97,43 @@
     margin-bottom: 4px;
     color: var(--accent);
   }
-  .plan-card h3 { margin: 0 0 4px; font-size: 0.92rem; }
+  .plan-card h3 {
+    margin: 0 0 4px;
+    font-size: 0.92rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+  .plan-card h3 .divider { opacity: 0.6; }
+  .emoji-icon {
+    width: 0.95em;
+    height: 0.95em;
+    flex: 0 0 auto;
+    vertical-align: -0.1em;
+    color: var(--accent);
+  }
+  .emoji-icon.star { color: rgba(245, 247, 255, 0.8); }
+  .emoji-icon.diamond { color: rgba(245, 247, 255, 0.8); }
+  .emoji-icon.lightbulb { color: rgba(245, 247, 255, 0.8); }
+  .emoji-icon.rocket { color: rgba(245, 247, 255, 0.8); }
+  .emoji-icon.pointer { color: rgba(245, 247, 255, 0.9); }
   .price { font-size: 0.98rem; font-weight: 700; }
   .old-price { text-decoration: line-through; opacity: 0.6; margin-right: 8px; }
   .new-price { color: var(--accent); font-weight: 700; }
   .discount { font-size: 0.78rem; color: rgba(124, 248, 255, 0.85); margin: 4px 0 0; }
-  .plan-card ul { margin: 6px 0 0; padding-left: 16px; font-size: 0.74rem; color: rgba(245, 247, 255, 0.7); }
+  .plan-card ul { margin: 4px 0 0; padding-left: 14px; font-size: 0.74rem; color: rgba(245, 247, 255, 0.7); }
   .plan-action {
     margin-top: 8px;
     display: inline-flex;
-    padding: 8px 14px;
+    padding: 6px 12px;
     border: 1px solid rgba(124, 248, 255, 0.35);
     border-radius: 999px;
     color: var(--text);
     font-weight: 600;
+    font-size: 0.74rem;
+    gap: 6px;
+    align-items: center;
     cursor: pointer;
     text-decoration: none;
     background: rgba(124, 248, 255, 0.08);
@@ -136,50 +165,71 @@
       <div class="promo-text">Pre‑launch VIPs get a 20‑day demo, priority onboarding, and launch‑only benefits. More features and surprises will be revealed at launch.</div>
 
       <section class="plans">
-        <div class="plan-card">
+        <div class="plan-card starter">
           <svg class="plan-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4 12h16M4 7h16M4 17h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
           </svg>
-          <h3>Breeze VPS</h3>
-          <div class="price"><span class="old-price">10 €</span><span class="new-price">9.50 €</span></div>
-          <div class="discount">5% pre‑launch discount + VIP benefits</div>
+          <h3>
+            <svg class="emoji-icon diamond" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l10 10-10 10L2 12 12 2z" fill="currentColor"/></svg>
+            <span>Starter VPS</span>
+          </h3>
+          <div class="price"><span class="old-price">£11/month</span><span class="new-price">£9/month</span></div>
+          <div class="discount">Save 18% · Ideal for personal websites &amp; small projects</div>
           <ul>
             <li>2 GB RAM</li>
+            <li>1 vCore</li>
             <li>50 GB NVMe</li>
-            <li>Fast backups included</li>
-            <li>Friendly, quick support</li>
+            <li>Daily Offsite Backup</li>
+            <li>Standard Support</li>
           </ul>
-          <a class="plan-action breeze" href="https://forms.gle/o7h1GUtXsgvSt7K17" target="_blank" rel="noreferrer">Join Breeze VIP</a>
+          <a class="plan-action breeze" href="https://forms.gle/o7h1GUtXsgvSt7K17" target="_blank" rel="noreferrer">Join Starter VIP</a>
         </div>
-        <div class="plan-card">
+        <div class="plan-card growth">
           <svg class="plan-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M5 12h14M7 8h10M6 16h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
           </svg>
-          <h3>Cloud VPS</h3>
-          <div class="price"><span class="old-price">18 €</span><span class="new-price">15.30 €</span></div>
-          <div class="discount">15% pre‑launch discount + VIP benefits</div>
+          <h3>
+            <svg class="emoji-icon star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.9 6.1 6.7.9-4.9 4.7 1.2 6.6L12 17.8 6.1 20.3l1.2-6.6L2.4 9l6.7-.9L12 2z" fill="currentColor"/></svg>
+            <span>MOST POPULAR – BEST VALUE</span>
+            <span class="divider">·</span>
+            <svg class="emoji-icon diamond" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l10 10-10 10L2 12 12 2z" fill="currentColor"/></svg>
+            <span>Growth VPS</span>
+          </h3>
+          <div class="price"><span class="old-price">£19/month</span><span class="new-price">£16/month</span></div>
+          <div class="discount">Save 16% · Perfect for businesses &amp; online stores</div>
           <ul>
             <li>4 GB RAM</li>
+            <li>2 vCores</li>
             <li>80 GB NVMe</li>
-            <li>Built for online stores</li>
-            <li>Email + phone support</li>
+            <li>Daily Offsite Backup</li>
+            <li>Priority Support</li>
+            <li>Free Setup Assistance</li>
+            <li><svg class="emoji-icon lightbulb" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 00-4.2 12.6V17a1 1 0 001 1h6a1 1 0 001-1v-2.4A7 7 0 0012 2zm2 14.6V16h-4v.6l-.8-.6A5 5 0 1114 12a5 5 0 01-1.2 3.2l1.2 1.4zm-5 5.4h6v-1H9v1z" fill="currentColor"/></svg>Only £7 more than Starter</li>
+            <li><svg class="emoji-icon rocket" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c4.4 1.3 7 4.8 7 9l-4 4-4-4-4 4-4-4c0-4.2 2.6-7.7 7-9zm0 6a2 2 0 100 4 2 2 0 000-4zm-7 10l4 4 2-2-4-4-2 2zm12-2l2 2 4-4-2-2-4 4z" fill="currentColor"/></svg>Double the RAM + Double CPU</li>
           </ul>
-          <a class="plan-action cloud" href="https://forms.gle/o7h1GUtXsgvSt7K17" target="_blank" rel="noreferrer">Join Cloud VIP</a>
+          <a class="plan-action cloud" href="https://forms.gle/o7h1GUtXsgvSt7K17" target="_blank" rel="noreferrer">
+            <svg class="emoji-icon pointer" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 12h13l-4-4 1.4-1.4L21.8 12l-7.4 7.4L13 18l4-4H4z" fill="currentColor"/></svg>
+            <span>This is where você quer que o cliente clique.</span>
+          </a>
         </div>
-        <div class="plan-card">
+        <div class="plan-card pro">
           <svg class="plan-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 10h12M8 6h8M5 14h14M7 18h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
           </svg>
-          <h3>Storm VPS</h3>
-          <div class="price"><span class="old-price">35 €</span><span class="new-price">33.25 €</span></div>
-          <div class="discount">5% pre‑launch discount + VIP benefits</div>
+          <h3>
+            <svg class="emoji-icon diamond" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l10 10-10 10L2 12 12 2z" fill="currentColor"/></svg>
+            <span>Pro VPS</span>
+          </h3>
+          <div class="price"><span class="old-price">£32/month</span><span class="new-price">£27/month</span></div>
+          <div class="discount">Save 15% · For SaaS &amp; high traffic platforms</div>
           <ul>
             <li>8 GB RAM</li>
-            <li>160 GB HDD/NVMe</li>
-            <li>Best for SaaS & large sites</li>
-            <li>Premium rapid support</li>
+            <li>4 vCores</li>
+            <li>160 GB NVMe</li>
+            <li>Daily Offsite Backup</li>
+            <li>Premium Rapid Support</li>
           </ul>
-          <a class="plan-action storm" href="https://forms.gle/o7h1GUtXsgvSt7K17" target="_blank" rel="noreferrer">Join Storm VIP</a>
+          <a class="plan-action storm" href="https://forms.gle/o7h1GUtXsgvSt7K17" target="_blank" rel="noreferrer">Join Pro VIP</a>
         </div>
       </section>
       <div class="footer">© 2026 HawkCloud. All rights reserved.</div>
