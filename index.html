@@ -56,7 +56,7 @@
     gap: 14px;
     margin-bottom: 8px;
   }
-  .logo img { width: min(360px, 70vw); height: auto; object-fit: contain; }
+  .logo img { width: min(360px, 70vw); height: auto; object-fit: contain; filter: grayscale(0.6) saturate(0.3) brightness(0.85) contrast(0.95); }
   h1 { font-size: clamp(1.6rem, 2.4vw, 2.1rem); margin: 18px 0 8px; }
   p { font-size: clamp(0.9rem, 1vw, 1rem); margin: 0 0 18px; color: rgba(245, 247, 255, 0.86); }
   .subtitle { font-size: 1rem; margin-bottom: 10px; color: rgba(245, 247, 255, 0.7); }
@@ -139,6 +139,21 @@
     gap: 10px;
     margin: 10px 0 8px;
   }
+  .reminder {
+    margin: 10px auto 6px;
+    padding: 10px 14px;
+    border-radius: 16px;
+    background: rgba(8, 14, 28, 0.55);
+    border: 1px dashed rgba(124, 248, 255, 0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.85rem;
+    box-shadow: 0 0 18px rgba(124, 248, 255, 0.15);
+  }
+  .reminder strong { color: var(--accent); }
   .feature-card {
     padding: 8px 8px;
     border-radius: 18px;
@@ -153,7 +168,14 @@
     color: var(--accent);
   }
   .feature-card h3 { margin: 0 0 3px; font-size: 0.82rem; }
-  .feature-card p { margin: 0; font-size: 0.75rem; color: rgba(245, 247, 255, 0.7); }
+  .feature-card p { margin: 0 0 6px; font-size: 0.75rem; color: rgba(245, 247, 255, 0.7); }
+  .feature-list {
+    margin: 0;
+    padding-left: 14px;
+    font-size: 0.72rem;
+    color: rgba(245, 247, 255, 0.65);
+  }
+  .feature-list li { margin-bottom: 4px; }
   .footer { margin-top: 8px; font-size: 0.72rem; color: rgba(245, 247, 255, 0.5); }
   @media (max-height: 820px) {
     .container { padding: 16px 12px; }
@@ -172,7 +194,7 @@
   <div class="overlay">
     <main class="container">
       <div class="logo">
-        <img src="imag/logo-transparent.png" alt="Logo HawkCloud">
+        <img src="imag/logo-prevenda-transparent.png" alt="Logo HawkCloud">
       </div>
       <h1>Next‑gen hosting infrastructure for the UK</h1>
       <p>We’re finalising the last details. Our hosting platform is launching soon with performance, security, and scalability at its core.</p>
@@ -199,6 +221,10 @@
         </div>
       </section>
 
+      <a class="reminder" href="prevenda.html">
+        <strong>Pre‑sale VIP</strong> • 20‑day demo + launch‑only perks →
+      </a>
+
       <div class="spacer"></div>
 
       <section class="features">
@@ -208,6 +234,11 @@
           </svg>
           <h3>Consistent performance</h3>
           <p>Optimised servers, NVMe SSDs, and smart caching for fast loads.</p>
+          <ul class="feature-list">
+            <li>UK edge‑ready routing to reduce latency.</li>
+            <li>Resource isolation for steady speed at peak times.</li>
+            <li>Transparent limits, no hidden throttling.</li>
+          </ul>
         </div>
         <div class="feature-card">
           <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -215,6 +246,11 @@
           </svg>
           <h3>Security by design</h3>
           <p>Automated backups, 24/7 monitoring, and DDoS protection.</p>
+          <ul class="feature-list">
+            <li>Daily snapshots with quick restore points.</li>
+            <li>Proactive alerts and hardened server configs.</li>
+            <li>Free SSL and WAF‑ready rules.</li>
+          </ul>
         </div>
         <div class="feature-card">
           <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -224,6 +260,11 @@
           </svg>
           <h3>Real support</h3>
           <p>Human, expert support to help your business grow.</p>
+          <ul class="feature-list">
+            <li>Real engineers, not scripts or bots.</li>
+            <li>Migration guidance and performance tuning.</li>
+            <li>Clear SLAs and honest communication.</li>
+          </ul>
         </div>
       </section>
       <div class="footer">© 2026 HawkCloud. All rights reserved.</div>
