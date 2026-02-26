@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>HawkCloud – Pre‑launch VIP</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap');
+  :root {
+    --bg-overlay: rgba(7, 12, 24, 0.75);
+    --accent: #7cf8ff;
+    --accent-2: #7b61ff;
+    --text: #f5f7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: "Manrope", "Segoe UI", system-ui, sans-serif;
+    color: var(--text);
+    text-align: center;
+    background-color: #0b1020;
+    background-image: url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=80");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .overlay {
+    min-height: 100vh;
+    background: linear-gradient(180deg, rgba(5, 10, 20, 0.12), rgba(5, 10, 20, 0.3)), var(--bg-overlay);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+  }
+  .container {
+    width: 100%;
+    max-width: 1120px;
+    padding: clamp(18px, 3vw, 28px) clamp(14px, 2.5vw, 22px);
+    border-radius: 28px;
+    background: rgba(14, 20, 40, 0.62);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 10px;
+  }
+  .logo img { width: min(280px, 65vw); height: auto; object-fit: contain; filter: grayscale(0.6) saturate(0.3) brightness(0.85) contrast(0.95); }
+  h1 { font-size: clamp(1.8rem, 2.8vw, 2.3rem); margin: 6px 0 8px; }
+  p { font-size: clamp(0.95rem, 1.1vw, 1.05rem); margin: 0 0 12px; color: rgba(245, 247, 255, 0.86); }
+  .promo-text {
+    margin: 10px 0 12px;
+    font-size: 0.95rem;
+    color: rgba(245, 247, 255, 0.8);
+  }
+  .vip-badges {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .vip-badge {
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(124, 248, 255, 0.2);
+    font-size: 0.8rem;
+    color: rgba(245, 247, 255, 0.75);
+  }
+  .plans {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 16px 0 10px;
+  }
+  .plan-card {
+    padding: 14px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: left;
+  }
+  .plan-icon {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 6px;
+    color: var(--accent);
+  }
+  .plan-card h3 { margin: 0 0 6px; font-size: 1rem; }
+  .price { font-size: 1.05rem; font-weight: 700; }
+  .old-price { text-decoration: line-through; opacity: 0.6; margin-right: 8px; }
+  .new-price { color: var(--accent); font-weight: 700; }
+  .discount { font-size: 0.85rem; color: rgba(124, 248, 255, 0.85); margin: 4px 0 0; }
+  .plan-card ul { margin: 8px 0 0; padding-left: 16px; font-size: 0.8rem; color: rgba(245, 247, 255, 0.7); }
+  .plan-action {
+    margin-top: 8px;
+    display: inline-flex;
+    padding: 8px 14px;
+    border: 1px solid rgba(124, 248, 255, 0.35);
+    border-radius: 999px;
+    color: var(--text);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    background: rgba(124, 248, 255, 0.08);
+  }
+  .plan-action.breeze { border-color: rgba(124, 248, 255, 0.6); }
+  .plan-action.cloud { border-color: rgba(123, 97, 255, 0.6); }
+  .plan-action.storm { border-color: rgba(124, 248, 255, 0.35); }
+  .footer { margin-top: 14px; font-size: 0.75rem; color: rgba(245, 247, 255, 0.5); }
+  @media (max-width: 720px) {
+    .plans { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <div class="overlay">
+    <main class="container">
+      <div class="logo">
+        <img src="imag/logo-prevenda-transparent.png" alt="Logo HawkCloud">
+      </div>
+      <h1>Pre‑launch VIP Access</h1>
+
+      <div class="vip-badges">
+        <div class="vip-badge">No billing until launch</div>
+        <div class="vip-badge">Limited VIP spots</div>
+        <div class="vip-badge">Early‑access perks</div>
+      </div>
+      <div class="promo-text">Pre‑launch VIPs get a 20‑day demo, priority onboarding, and launch‑only benefits. More features and surprises will be revealed at launch.</div>
+
+      <section class="plans">
+        <div class="plan-card">
+          <svg class="plan-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 12h16M4 7h16M4 17h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <h3>Breeze VPS</h3>
+          <div class="price"><span class="old-price">10 €</span><span class="new-price">9.50 €</span></div>
+          <div class="discount">5% pre‑launch discount + VIP benefits</div>
+          <ul>
+            <li>2 GB RAM</li>
+            <li>50 GB NVMe</li>
+            <li>Fast backups included</li>
+            <li>Friendly, quick support</li>
+          </ul>
+          <a class="plan-action breeze" href="https://forms.gle/o7h1GUtXsgvSt7K17" target="_blank" rel="noreferrer">Join Breeze VIP</a>
+        </div>
+        <div class="plan-card">
+          <svg class="plan-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 12h14M7 8h10M6 16h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <h3>Cloud VPS</h3>
+          <div class="price"><span class="old-price">18 €</span><span class="new-price">15.30 €</span></div>
+          <div class="discount">15% pre‑launch discount + VIP benefits</div>
+          <ul>
+            <li>4 GB RAM</li>
+            <li>80 GB NVMe</li>
+            <li>Built for online stores</li>
+            <li>Email + phone support</li>
+          </ul>
+          <a class="plan-action cloud" href="https://forms.gle/o7h1GUtXsgvSt7K17" target="_blank" rel="noreferrer">Join Cloud VIP</a>
+        </div>
+        <div class="plan-card">
+          <svg class="plan-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 10h12M8 6h8M5 14h14M7 18h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <h3>Storm VPS</h3>
+          <div class="price"><span class="old-price">35 €</span><span class="new-price">33.25 €</span></div>
+          <div class="discount">5% pre‑launch discount + VIP benefits</div>
+          <ul>
+            <li>8 GB RAM</li>
+            <li>160 GB HDD/NVMe</li>
+            <li>Best for SaaS & large sites</li>
+            <li>Premium rapid support</li>
+          </ul>
+          <a class="plan-action storm" href="https://forms.gle/o7h1GUtXsgvSt7K17" target="_blank" rel="noreferrer">Join Storm VIP</a>
+        </div>
+      </section>
+      <div class="footer">© 2026 HawkCloud. All rights reserved.</div>
+    </main>
+  </div>
+</body>
+</html>
